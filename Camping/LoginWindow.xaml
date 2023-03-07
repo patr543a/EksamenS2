@@ -1,0 +1,40 @@
+﻿<Window x:Class="Camping.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Camping"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="200" Width="400"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="25" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="1" Grid.Row="1" FontSize="12" Content="Brugernavn" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
+        <Label Grid.Column="1" Grid.Row="4" FontSize="12" Content="Kodeord" HorizontalAlignment="Stretch" VerticalAlignment="Bottom"/>
+
+        <TextBox x:Name="TbxUsername" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Stretch" FontSize="16" Text="" VerticalAlignment="Stretch" />
+        <PasswordBox x:Name="TbxPassword" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Stretch" FontSize="16" VerticalAlignment="Stretch" />
+
+        <Button x:Name="BtnLogin" Grid.Column="1" Grid.Row="7" FontSize="16" Content="Login" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="BtnLogin_Click" />
+
+        <Button x:Name="BtnClose" Grid.Column="2" Content="X" BorderThickness="0" Background="Transparent" FontSize="16" FontWeight="Bold" Click="BtnClose_Click"/>
+
+    </Grid>
+</Window>

@@ -1,0 +1,154 @@
+﻿<Window x:Class="Camping.CampingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Camping"
+        mc:Ignorable="d"
+        Title="CampingWindow" Height="450" Width="800"
+        WindowState="Maximized">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="15" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="5" />
+        </Grid.RowDefinitions>
+
+        <GroupBox Header="Ny booking" Grid.Column="1" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="5" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="15" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" MinHeight="5" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="5" />
+                </Grid.RowDefinitions>
+
+                <Label Content="Navn" Grid.Column="1" Grid.Row="1" />
+                <Label Content="Email" Grid.Column="1" Grid.Row="3" />
+                <Label Content="Telefon" Grid.Column="1" Grid.Row="5" />
+                <Label Content="Fra" Grid.Column="1" Grid.Row="7" />
+                <Label Content="Til" Grid.Column="1" Grid.Row="9" />
+                <Label Content="Plads" Grid.Column="1" Grid.Row="11" />
+                <Label Content="Antal voskne" Grid.Column="1" Grid.Row="15" />
+                <Label Content="Antal børn" Grid.Column="1" Grid.Row="17" />
+
+                <TextBox x:Name="TbxName" Grid.Column="3" Grid.Row="1" />
+                <TextBox x:Name="TbxEmail" Grid.Column="3" Grid.Row="3" />
+                <TextBox x:Name="TbxPhone" Grid.Column="3" Grid.Row="5" />
+
+                <DatePicker x:Name="DprFrom" Grid.Column="3" Grid.Row="7" />
+                <DatePicker x:Name="DprTo" Grid.Column="3" Grid.Row="9" />
+
+                <ComboBox x:Name="CmxPitches" Grid.Column="3" Grid.Row="11" />
+
+                <Button x:Name="BtnCheck" Content="Tjek ledighed" Grid.Column="3" Grid.Row="13" />
+
+                <TextBox x:Name="TbxAdults" Grid.Column="3" Grid.Row="15" />
+                <TextBox x:Name="TbxChildren" Grid.Column="3" Grid.Row="17" />
+
+                <Button x:Name="BtnSubmit" Content="Opret" Grid.Column="1" Grid.Row="19" Grid.ColumnSpan="3" />
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Oversigt" Grid.Column="3" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="15" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="5" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="5" />
+                </Grid.RowDefinitions>
+
+                <Label Content="Fra" Grid.Column="1" Grid.Row="1" />
+                <Label Content="Til" Grid.Column="1" Grid.Row="3" />
+
+                <Label Content="Bookings" Grid.Column="5" Grid.Row="1" Grid.ColumnSpan="2" />
+                <Label Content="Ledige pladser" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" />
+
+                <DatePicker x:Name="DprSearchFrom" Grid.Column="3" Grid.Row="1" />
+                <DatePicker x:Name="DprSearchTo" Grid.Column="3" Grid.Row="3" />
+
+                <Button x:Name="BtnSearch" Content="Søg" Grid.Column="3" Grid.Row="5" />
+
+                <ListBox x:Name="LbxAvailable" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="3" />
+
+                <DataGrid x:Name="DgdBookings" Grid.Column="5" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="7" AutoGenerateColumns="False">
+                    
+                </DataGrid>
+
+                <Button x:Name="BtnEdit" Content="Rediger" Grid.Column="6" Grid.Row="11" />
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Andre" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="5" />
+                </Grid.RowDefinitions>
+
+                <Button x:Name="BtnWeather" Content="Vejr" Grid.Column="1" Grid.Row="1" Width="50" Click="BtnWeather_Click" />
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
