@@ -1,6 +1,8 @@
-﻿namespace Camping.Entities.DataClasses
+﻿using Camping.Entities.Interfaces;
+
+namespace Camping.Entities.DataClasses
 {
-    public struct Booking
+    public struct Booking : IDataClass
     {
         private int _bookingId;
         private DateTime _startDate;

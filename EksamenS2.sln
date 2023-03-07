@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camping.UnitTest", "Camping
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camping.Entities", "Camping.Entities\Camping.Entities.csproj", "{2367DECF-104F-4B15-BBE2-B3719221FE24}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Temp", "Temp\Temp.csproj", "{71B0CC1C-98B4-470A-8821-42CA08173896}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{2367DECF-104F-4B15-BBE2-B3719221FE24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2367DECF-104F-4B15-BBE2-B3719221FE24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2367DECF-104F-4B15-BBE2-B3719221FE24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71B0CC1C-98B4-470A-8821-42CA08173896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71B0CC1C-98B4-470A-8821-42CA08173896}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71B0CC1C-98B4-470A-8821-42CA08173896}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71B0CC1C-98B4-470A-8821-42CA08173896}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

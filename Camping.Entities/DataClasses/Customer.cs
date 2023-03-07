@@ -1,6 +1,8 @@
-﻿namespace Camping.Entities.DataClasses
+﻿using Camping.Entities.Interfaces;
+
+namespace Camping.Entities.DataClasses
 {
-    public struct Customer
+    public struct Customer : IDataClass
     {
         private int _customerId;
         private string _fullName = string.Empty;

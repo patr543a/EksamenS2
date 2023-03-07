@@ -24,5 +24,17 @@ namespace Camping.Services
 
             return false;
         }
+
+        public static void Verify(string username, string password)
+        {
+            if (!_logins.ContainsKey(username))
+                throw new Exception("Ugyldig login");
+
+            var login = _logins[username]!.GetHashCode();
+            var pass = password.GetHashCode();
+
+            if (login != pass)
+                throw new Exception("Ugyldig login");
+        }
     }
 }

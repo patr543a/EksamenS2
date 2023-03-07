@@ -1,6 +1,8 @@
-﻿namespace Camping.Entities.DataClasses
+﻿using Camping.Entities.Interfaces;
+
+namespace Camping.Entities.DataClasses
 {
-    public struct Pitch
+    public struct Pitch : IDataClass
     {
         private int _pitchId;
         private string _pitchName = string.Empty;
