@@ -15,12 +15,22 @@ namespace Camping.Services
         private readonly string _baseUrl = string.Empty;
 
         /// <summary>
+        /// Base url for weather icons
+        /// </summary>
+        private static readonly string _baseIconUrl = @"https://api.openweathermap.org/img/w/";
+
+        /// <summary>
         /// Dictionary of location ids
         /// </summary>
         private static Dictionary<string, int> _locations { get; } = new()
         {
             { "Vejle", 2610613 },
         };
+
+        /// <summary>
+        /// Base url for weather icons
+        /// </summary>
+        public static string BaseIconUrl => _baseIconUrl;
 
         /// <summary>
         /// Gets the list of location ids
@@ -62,15 +72,26 @@ namespace Camping.Services
             // Loop over list in Root
             foreach (var l in r.List)
                 weather.Add(new WeatherData( // Make new WeatherData and add to the list
-                    new DateTime(l.Dt),
+                    DateTime.UnixEpoch.AddSeconds(l.Dt),
                     $"{r.City.Name}, {r.City.Country}",
                     l.Main.Temp.ToString("0.##"),
                     l.Weather[0].Description,
                     l.Weather[0].Icon
                 ));
 
-            // Return list
-            return weather;
+            // If negative set 0
+            if (daysAhead < 0)
+                daysAhead = 0;
+
+            // If too big set to 5
+            if (daysAhead > 5)
+                daysAhead = 5;
+
+            // Convert to Now + daysAhead
+            var lastest = DateTime.UtcNow.AddDays(daysAhead);
+
+            // Filter list and return it
+            return weather.Where(w => w.Date <= lastest).ToList();
         }
 
         /// <summary>
@@ -88,7 +109,10 @@ namespace Camping.Services
         /// <returns>Json string of the responds from the server</returns>
         private static string? CallWebApi(string url)
         {
+            // Get WebClient
             using WebClient client = new();
+
+            // Download and return Json string
             return client.DownloadString(url);
         }
     }
