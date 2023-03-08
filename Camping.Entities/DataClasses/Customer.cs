@@ -51,13 +51,7 @@ namespace Camping.Entities.DataClasses
         public string PhoneNumber 
         { 
             get => _phoneNumber; 
-            set
-            {
-                if (string.IsNullOrWhiteSpace(value))
-                    throw new ArgumentException("Telefon nummer kan ikke være Null, Empty eller Whitespace.", nameof(value));
-                else if (_phoneNumber != value)
-                    _phoneNumber = value;
-            }
+            set => _phoneNumber = value;
         }
 
         public Customer(string fullName, string emailAddress, string phoneNumber) 
