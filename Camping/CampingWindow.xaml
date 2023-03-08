@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Camping"
         mc:Ignorable="d"
         Title="CampingWindow" Height="450" Width="800"
-        WindowState="Maximized">
+        WindowState="Maximized" Initialized="Window_Initialized">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="5" />
@@ -72,7 +72,7 @@
                 <DatePicker x:Name="DprFrom" Grid.Column="3" Grid.Row="7" />
                 <DatePicker x:Name="DprTo" Grid.Column="3" Grid.Row="9" />
 
-                <ComboBox x:Name="CmxPitches" Grid.Column="3" Grid.Row="11" />
+                <ComboBox x:Name="CmxPitches" SelectedIndex="0" Grid.Column="3" Grid.Row="11" />
 
                 <Button x:Name="BtnCheck" Content="Tjek ledighed" Grid.Column="3" Grid.Row="13" />
 
@@ -120,12 +120,21 @@
                 <DatePicker x:Name="DprSearchFrom" Grid.Column="3" Grid.Row="1" />
                 <DatePicker x:Name="DprSearchTo" Grid.Column="3" Grid.Row="3" />
 
-                <Button x:Name="BtnSearch" Content="Søg" Grid.Column="3" Grid.Row="5" />
+                <Button x:Name="BtnSearch" Content="Søg" Grid.Column="3" Grid.Row="5" Click="BtnSearch_Click" />
 
                 <ListBox x:Name="LbxAvailable" Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="3" />
 
                 <DataGrid x:Name="DgdBookings" Grid.Column="5" Grid.Row="3" Grid.ColumnSpan="3" Grid.RowSpan="7" AutoGenerateColumns="False">
-                    
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Navn" Binding="{Binding CustomerName}" />
+                        <DataGridTextColumn Header="Email" Binding="{Binding CustomerEmail}" />
+                        <DataGridTextColumn Header="Telefon" Binding="{Binding CustomerPhone}" />
+                        <DataGridTextColumn Header="Plads" Binding="{Binding PitchName}" />
+                        <DataGridTextColumn Header="Voskne" Binding="{Binding Adults}" />
+                        <DataGridTextColumn Header="Børn" Binding="{Binding Children}" />
+                        <DataGridTextColumn Header="Start" Binding="{Binding StartDate}" />
+                        <DataGridTextColumn Header="Slut" Binding="{Binding EndDate}" />
+                    </DataGrid.Columns>
                 </DataGrid>
 
                 <Button x:Name="BtnEdit" Content="Rediger" Grid.Column="6" Grid.Row="11" />

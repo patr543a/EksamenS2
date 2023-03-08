@@ -4,9 +4,48 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Camping"
+         xmlns:converters="clr-namespace:Camping.Converters"
         mc:Ignorable="d"
-        Title="WeatherWindow" Height="450" Width="800">
+        Title="WeatherWindow" Height="450" Width="800" Initialized="Window_Initialized"
+        WindowState="Maximized">
+    <Window.Resources>
+        <converters:DateConverter x:Key="dateConverter"/>
+        <converters:TemperatureConverter x:Key="temperatureConverter"/>
+        <converters:IconConverter x:Key="iconConverter"/>
+    </Window.Resources>
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5" />
+        </Grid.RowDefinitions>
+
+        <GroupBox Header="General" Grid.Column="1" Grid.Row="1">
+            <Label x:Name="LblLocation" Content="Placeholder" />
+        </GroupBox>
+
+        <GroupBox Header="Vejr" Grid.Column="1" Grid.Row="3">
+            <DataGrid x:Name="DgdWeather" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Dato" Binding="{Binding Date, Converter={StaticResource dateConverter}}" />
+                    <DataGridTextColumn Header="Temperatur" Binding="{Binding Degrees, Converter={StaticResource temperatureConverter}}" />
+                    <DataGridTextColumn Header="Beskrivelse" Binding="{Binding Description}" />
+                    <DataGridTemplateColumn Header="Icon" Width="SizeToCells">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding Icon, Converter={StaticResource iconConverter}}" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </GroupBox>
     </Grid>
 </Window>
