@@ -21,4 +21,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Camping.Entities\Camping.Entities.csproj" />
+  </ItemGroup>
+
 </Project>
