@@ -14,7 +14,7 @@ create table Customers(
 	CustomerId int primary key identity(0,1) not null,
 	FullName nvarchar(100) not null,
 	EmailAddress nvarchar(100) not null,
-	PhoneNumber nvarchar(15),
+	PhoneNumber nvarchar(15) not null,
 );
 
 create table Bookings(
@@ -35,3 +35,7 @@ insert into Pitches(PitchName) values ('12A');
 insert into Pitches(PitchName) values ('12B');
 insert into Pitches(PitchName) values ('14A');
 insert into Pitches(PitchName) values ('14B');
+
+insert into Customers(FullName, EmailAddress, PhoneNumber) values ('Patrick Frederiksen', 'patrick230405@gmail.com', '');
+
+insert into Bookings(StartDate, EndDate, Adults, Children, PitchId, CustomerId) values ('20230309', '20230316', 1, 0, 0, 0);
