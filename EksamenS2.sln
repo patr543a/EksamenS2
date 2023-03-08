@@ -3,17 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camping", "Camping\Camping.csproj", "{E87CDA6E-D2AD-45C6-BBDE-7F427366358C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Camping", "Camping\Camping.csproj", "{E87CDA6E-D2AD-45C6-BBDE-7F427366358C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camping.Repository", "Camping.Repository\Camping.Repository.csproj", "{BA1E77A4-3569-4B8C-96E8-B84724A87006}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Camping.Repository", "Camping.Repository\Camping.Repository.csproj", "{BA1E77A4-3569-4B8C-96E8-B84724A87006}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camping.Services", "Camping.Services\Camping.Services.csproj", "{B7488E92-A8AA-46BF-937A-5E1766A0B120}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Camping.Services", "Camping.Services\Camping.Services.csproj", "{B7488E92-A8AA-46BF-937A-5E1766A0B120}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camping.UnitTest", "Camping.UnitTest\Camping.UnitTest.csproj", "{EB447DAF-A7D1-4A91-8A5D-64A5DE363689}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Camping.UnitTest", "Camping.UnitTest\Camping.UnitTest.csproj", "{EB447DAF-A7D1-4A91-8A5D-64A5DE363689}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Camping.Entities", "Camping.Entities\Camping.Entities.csproj", "{2367DECF-104F-4B15-BBE2-B3719221FE24}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Temp", "Temp\Temp.csproj", "{71B0CC1C-98B4-470A-8821-42CA08173896}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Camping.Entities", "Camping.Entities\Camping.Entities.csproj", "{2367DECF-104F-4B15-BBE2-B3719221FE24}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,10 +39,6 @@ Global
 		{2367DECF-104F-4B15-BBE2-B3719221FE24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2367DECF-104F-4B15-BBE2-B3719221FE24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2367DECF-104F-4B15-BBE2-B3719221FE24}.Release|Any CPU.Build.0 = Release|Any CPU
-		{71B0CC1C-98B4-470A-8821-42CA08173896}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{71B0CC1C-98B4-470A-8821-42CA08173896}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{71B0CC1C-98B4-470A-8821-42CA08173896}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{71B0CC1C-98B4-470A-8821-42CA08173896}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
