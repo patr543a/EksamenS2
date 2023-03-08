@@ -2,6 +2,9 @@
 
 namespace Camping.Entities.DataClasses
 {
+    /// <summary>
+    /// Represents a Booking from the database
+    /// </summary>
     public struct Booking : IDataClass
     {
         private int _bookingId;

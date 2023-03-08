@@ -2,6 +2,9 @@
 
 namespace Camping.Entities.DataClasses
 {
+    /// <summary>
+    /// Represents a Pitch from the database
+    /// </summary>
     public struct Pitch : IDataClass
     {
         private int _pitchId;

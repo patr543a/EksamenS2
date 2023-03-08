@@ -2,6 +2,9 @@
 
 namespace Camping.Entities.DataClasses
 {
+    /// <summary>
+    /// Represents a Customer from the database
+    /// </summary>
     public struct Customer : IDataClass
     {
         private int _customerId;
