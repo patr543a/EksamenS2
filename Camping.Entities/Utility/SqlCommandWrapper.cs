@@ -2,7 +2,7 @@
 
 namespace Camping.Entities.Utility
 {
-    public class SqlCommandWrapper
+    public class SqlCommandWrapper : IDisposable
     {
         private readonly SqlCommand _command;
 
@@ -16,6 +16,9 @@ namespace Camping.Entities.Utility
         }
 
         ~SqlCommandWrapper()
+            => _command.Connection.Close();
+
+        public void Dispose()
             => _command.Connection.Close();
     }
 }
